@@ -106,3 +106,51 @@ Answer:
 //   }
 //   console.log(row);
 // }
+
+// -------------------------------------------
+/*
+Q. n = 5
+1
+1 0
+1 0 1
+1 0 1 0
+1 0 1 0 1
+
+Answer:
+  */
+
+// for (let i = 0; i < n; i++) {
+//   let row = "";
+//   let flag = 1;
+//   for (let j = 0; j < i + 1; j++) {
+//     row += flag + " ";
+//     if (flag == 1) {
+//       flag = 0;
+//     } else {
+//       flag = 1;
+//     }
+//   }
+//   console.log(row);
+// }
+
+// ---------------------------------------------------
+/*
+Q. n = 5
+1
+0 1
+0 1 0
+1 0 1 0
+1 0 1 0 1
+
+Answer:
+  */
+// let flag = 1;
+// for (let i = 0; i < n; i++) {
+//   let row = "";
+//   for (let j = 0; j < i + 1; j++) {
+//     row += flag + " ";
+
+//     flag = flag == 1 ? 0 : 1;
+//   }
+//   console.log(row);
+// }
