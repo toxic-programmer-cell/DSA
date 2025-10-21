@@ -22,3 +22,26 @@ count digits
 // let n = -473;
 
 // console.log(countDigits(n));
+
+// --------------------------------------------------------------
+
+// Q 2) find palidrone
+
+// function pelidrone(n) {
+//   let rev = 0;
+//   let copy = Math.abs(n);
+//   while (copy > 0) {
+//     let rem = copy % 10;
+//     rev = 10 * rev + rem;
+//     copy = Math.floor(copy / 10);
+//   }
+
+//   if (rev == Math.abs(n)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// let n = -118211;
+// console.log(pelidrone(n));
