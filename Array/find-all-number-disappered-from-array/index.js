@@ -1,5 +1,5 @@
 let nums = [4, 3, 2, 7, 8, 2, 3, 1];
-//  nums = [0, 1, 2, 3, 4, 5, 6, 7];
+let result = [];
 
 for (let i = 0; i < nums.length; i++) {
   let index = Math.abs(nums[i]) - 1;
@@ -8,6 +8,10 @@ for (let i = 0; i < nums.length; i++) {
   }
 }
 
-// i ->0->1->2->3->4->5->6->7
-// index = 0
-// [-4, -3, -2, -7, 8, 2, -3, -1]
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] > 0) {
+    result.push(i + 1);
+  }
+}
+
+console.log(result);
