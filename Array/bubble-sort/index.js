@@ -1,4 +1,5 @@
 function bubbleSort(arr) {
+  let isSwaped = false;
   let n = arr.length - 1;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
@@ -6,8 +7,10 @@ function bubbleSort(arr) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
+        isSwaped = true;
       }
     }
+    if (!isSwaped) break;
   }
   return arr;
 }
