@@ -6,8 +6,8 @@ Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
 let nums1 = [1, 2, 3];
 let nums2 = [2, 5, 6];
-let m = 3;
-let n = 3;
+let m = nums1.length;
+let n = nums2.length;
 /* 
 function merge(nums1, m, nums2, n) {
   let nums1Copy = nums1.slice(0, m); //slice is a array method to copy a array where(0 -> starting, m -> ending)
