@@ -9,13 +9,13 @@ function merge(arr1, arr2) {
   let p2 = 0;
   let i = 0;
 
-  while (i < m + n - 1) {
+  while (i < m + n) {
     if (p1 < m && arr1[p1] <= arr2[p2]) {
       res[i++] = arr1[p1++];
     } else {
       res[i++] = arr2[p2++];
     }
-    // console.log(res)
+    console.log(res);
   }
 
   return res;
@@ -31,5 +31,6 @@ function mergeSort(arr) {
   return merge(left, right);
 }
 
+// 0,6,3,-1,-5,69,00
 let result = mergeSort([94, 2, 6, 2, 45]);
-console.log(result);
+// console.log(result);

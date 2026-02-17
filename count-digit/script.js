@@ -25,7 +25,7 @@ count digits
 
 // --------------------------------------------------------------
 
-// Q 2) find palidrone
+// Q 2) find palindrone
 
 // function pelidrone(n) {
 //   let rev = 0;
