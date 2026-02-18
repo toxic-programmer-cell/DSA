@@ -9,13 +9,21 @@ function merge(arr1, arr2) {
   let p2 = 0;
   let i = 0;
 
-  while (i < m + n - 1) {
-    if (p1 < m && arr1[p1] <= arr2[p2]) {
+  while (p1 < m && p2 < n) {
+    if (arr1[p1] <= arr2[p2]) {
       res[i++] = arr1[p1++];
     } else {
       res[i++] = arr2[p2++];
     }
     // console.log(res)
+  }
+
+  while (p1 < m) {
+    res[i++] = arr1[p1++];
+  }
+
+  while (p2 < n) {
+    res[i++] = arr2[p2++];
   }
 
   return res;
