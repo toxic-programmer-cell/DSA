@@ -70,3 +70,34 @@ MyLinkedList.prototype.addAtIndex = function (val, index) {
 
   this.size++;
 };
+
+MyLinkedList.prototype.get = function (index) {
+  if (index < 0 || index >= this.size) return -1;
+
+  let current = this.head;
+  for (let i = 0; i < index; i++) {
+    current = current.next;
+  }
+
+  return current.val;
+};
+
+MyLinkedList.prototype.print = function () {
+  let current = this.head;
+  let result = "";
+
+  while (current !== null) {
+    result += current.val + " -> ";
+    current = current.next;
+  }
+
+  console.log(result + "null");
+};
+
+let res = new MyLinkedList();
+
+res.addToHead(2);
+res.addToHead(3);
+res.addToTail(8);
+res.print();
+// console.log(res);
