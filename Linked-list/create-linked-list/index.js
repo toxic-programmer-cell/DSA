@@ -37,3 +37,36 @@ MyLinkedList.prototype.addToTail = function (val) {
   // increase the size of linked list
   this.size++;
 };
+
+MyLinkedList.prototype.addAtIndex = function (val, index) {
+  // cheacking corner cases when given index can't be less then zero and greater then the size of linkedList
+  if (index < 0 || index > this.size) return;
+
+  //   if index is 0 use addToHead method to avoid duplicate logic
+  if (index === 0) return this.addToHead(val);
+
+  //   if index is last node use addToTail method to avoid duplicate logic
+  if (index === this.size) return this.addToTail(val);
+
+  // create new instance of node
+  let newNode = new Node(val);
+  //   initilize current to head
+  let current = this.head;
+
+  //   reach current to node brfore index
+  for (let i = 0; i < index - 1; i++) {
+    current = current.next;
+  }
+  //   first point newNode.next -> current.next (So we won't lose the current.next node)
+  newNode.next = current.next;
+  //   second now point current.next -> newNode
+  current.next = newNode;
+  /**
+   * current -> current.next,             (current)[1] -> [2](current.next)
+   * newNode -> current.next              (newNode)[3] -> [2](current.next)
+   * current -> newNode                   (current)[1] -> [3](newNode)
+   * current -> newNode -> current.next   (current)[1] -> [3](newNode) -> [2](current.next)
+   */
+
+  this.size++;
+};
