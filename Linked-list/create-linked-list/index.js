@@ -9,3 +9,10 @@ let MyLinkedList = function () {
   this.head = null;
   this.size = 0;
 };
+
+MyLinkedList.prototype.addToHead = function (val) {
+  let newNode = new Node(val);
+  newNode.next = this.head;
+  this.head = newNode;
+  this.size++;
+};
