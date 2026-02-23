@@ -100,4 +100,5 @@ res.addToHead(2);
 res.addToHead(3);
 res.addToTail(8);
 res.print();
-// console.log(res);
+let getIndex = res.get(1);
+console.log(getIndex);
