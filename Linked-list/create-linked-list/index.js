@@ -94,11 +94,28 @@ MyLinkedList.prototype.print = function () {
   console.log(result + "null");
 };
 
+MyLinkedList.prototype.deleteAtIndex = function (index) {
+  if (index < 0 || index >= this.size) return -1;
+
+  if (index === 0) {
+    this.head = this.head.next;
+  } else {
+    let current = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      current = current.next;
+    }
+    current.next = current.next.next;
+  }
+};
+
 let res = new MyLinkedList();
 
 res.addToHead(2);
 res.addToHead(3);
 res.addToTail(8);
+res.addToHead(4);
+res.addToTail(7);
+let result = res.deleteAtIndex(6);
 res.print();
-let getIndex = res.get(1);
-console.log(getIndex);
+// let getIndex = res.get(1);
+console.log(result);
