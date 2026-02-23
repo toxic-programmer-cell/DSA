@@ -75,11 +75,11 @@ MyLinkedList.prototype.get = function (index) {
   if (index < 0 || index >= this.size) return -1;
 
   let current = this.head;
-  for (let i = 0; i < index; i++) {
+  while (index-- && current) {
     current = current.next;
   }
 
-  return current.val;
+  return current ? current.val : -1;
 };
 
 MyLinkedList.prototype.print = function () {
