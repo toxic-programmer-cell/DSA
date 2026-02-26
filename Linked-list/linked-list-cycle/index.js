@@ -3,6 +3,7 @@ function Node(val) {
   this.next = null;
 }
 
+// Creating Linked list
 const MyLinkedList = function (arr, pos = -1) {
   let dummy = new Node(0);
   let curr = dummy;
@@ -27,6 +28,7 @@ const MyLinkedList = function (arr, pos = -1) {
   return dummy.next;
 };
 
+// printing linked list
 const PrintList = function (head, limit) {
   let curr = head;
   let list = [];
@@ -41,7 +43,21 @@ const PrintList = function (head, limit) {
   return list.join("->");
 };
 
-let head = MyLinkedList([1, 2, 3, 4, 5], 2);
+// cheaking for cycle
+let hasCycle = function (head) {
+  let curr = head;
+  let set = new Set();
+
+  while (curr && curr.next) {
+    if (set.has(curr)) return true;
+    set.add(curr);
+    curr = curr.next;
+  }
+
+  return false;
+};
+
+let head = MyLinkedList([1, 2, 3, 4, 5]);
 
 console.log(PrintList(head, 20));
-// console.log(head);
+console.log(hasCycle(head));
