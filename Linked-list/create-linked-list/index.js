@@ -1,7 +1,9 @@
 // Representation of node(Created Node)
-function Node(val) {
-  this.val = val;
-  this.next = null;
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
 }
 
 // Created Linked List
@@ -43,10 +45,16 @@ MyLinkedList.prototype.addAtIndex = function (val, index) {
   if (index < 0 || index > this.size) return;
 
   //   if index is 0 use addToHead method to avoid duplicate logic
-  if (index === 0) return this.addToHead(val);
+  if (index === 0) {
+    this.addToHead(val);
+    return;
+  }
 
   //   if index is last node use addToTail method to avoid duplicate logic
-  if (index === this.size) return this.addToTail(val);
+  if (index === this.size) {
+    this.addToTail(val);
+    return;
+  }
 
   // create new instance of node
   let newNode = new Node(val);
@@ -75,11 +83,11 @@ MyLinkedList.prototype.get = function (index) {
   if (index < 0 || index >= this.size) return -1;
 
   let current = this.head;
-  for (let i = 0; i < index; i++) {
+  while (index-- && current) {
     current = current.next;
   }
 
-  return current.val;
+  return current ? current.val : -1;
 };
 
 MyLinkedList.prototype.print = function () {
@@ -106,6 +114,8 @@ MyLinkedList.prototype.deleteAtIndex = function (index) {
     }
     current.next = current.next.next;
   }
+
+  this.size--;
 };
 
 let res = new MyLinkedList();
