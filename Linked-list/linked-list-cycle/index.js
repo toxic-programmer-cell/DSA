@@ -46,18 +46,30 @@ const PrintList = function (head, limit) {
 // cheaking for cycle
 let hasCycle = function (head) {
   let curr = head;
-  let set = new Set();
+  //   let set = new Set();
 
-  while (curr && curr.next) {
-    if (set.has(curr)) return true;
-    set.add(curr);
-    curr = curr.next;
+  //   while (curr && curr.next) {
+  //     if (set.has(curr)) return true;
+  //     set.add(curr);
+  //     curr = curr.next;
+  //   }
+
+  //   return false;
+
+  let slow = curr;
+  let fast = curr;
+
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) return true;
   }
 
   return false;
 };
 
-let head = MyLinkedList([1, 2, 3, 4, 5]);
+let head = MyLinkedList([1, 2, 3, 4, 5], 2);
 
 console.log(PrintList(head, 20));
 console.log(hasCycle(head));
